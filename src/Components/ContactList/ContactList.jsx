@@ -8,9 +8,7 @@ export default function ContactList() {
   const filteredContacts = contactListRedux.filter(
     (contact) =>
       contact.name &&
-      contact.name
-        .toLowerCase()
-        .includes(filterContact.name.toLowerCase(), console.log(contact))
+      contact.name.toLowerCase().includes(filterContact.name.toLowerCase())
   );
 
   return (
