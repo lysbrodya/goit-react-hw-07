@@ -4,7 +4,7 @@ import css from "./ContactList.module.css";
 
 export default function ContactList() {
   const filterContact = useSelector((state) => state.filter);
-  const contactListRedux = useSelector((state) => state.contacts);
+  const contactListRedux = useSelector((state) => state.contacts.items);
   const filteredContacts = contactListRedux.filter(
     (contact) =>
       contact.name &&
@@ -21,13 +21,3 @@ export default function ContactList() {
     </ul>
   );
 }
-// onDelete={onDelete}
-// const handleDelete = () => dispatch(deleteTask(task.id));
-// const delContact = (contactId) => {
-//   setContacts((prevContacts) => {
-//     return prevContacts.filter((contact) => contact.id !== contactId);
-//   });
-
-// const filteredContacts = contacts.filter((contact) =>
-//   contact.name.toLowerCase().includes(filter.toLowerCase())
-// );

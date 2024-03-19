@@ -5,7 +5,6 @@ import { deleteContact } from "../../redux/contactsSlice";
 export default function Contact({ contact }) {
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteContact(contact.id));
-  // Отримуємо посилання на функцію відправки екшенів
 
   return (
     <>
