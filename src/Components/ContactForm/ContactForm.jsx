@@ -2,19 +2,12 @@ import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contactsSlice";
 import { Formik, Form, Field } from "formik";
 import { useId } from "react";
-import { nanoid } from "nanoid";
 import * as Yup from "yup";
 import { ErrorMessage } from "formik";
 import css from "./ContactForm.module.css";
 
-export default function ContactForm({ text, number }) {
+export default function ContactForm() {
   const dispatch = useDispatch();
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    dispatch(addTask(form.elements.text.value));
-    form.reset();
-  };
 
   const phoneId = useId();
   const nameId = useId();
@@ -36,11 +29,7 @@ export default function ContactForm({ text, number }) {
     <Formik
       initialValues={initialValues}
       onSubmit={(values, actions) => {
-        onAdd({
-          id: nanoid(),
-          name: values.name,
-          number: values.number,
-        });
+        dispatch(addContact(values.name, values.number));
         actions.resetForm();
       }}
       validationSchema={FeedbackSchema}

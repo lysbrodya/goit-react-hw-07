@@ -12,7 +12,7 @@ const App = () => {
     }
     return listOfContacts;
   });
-  const [filter, setFilter] = useState("");
+  // const [filter, setFilter] = useState("");
 
   const addContact = (newContact) => {
     setContacts((prevContacts) => {
@@ -27,21 +27,15 @@ const App = () => {
     );
   }, [contacts]);
 
-  const delContact = (contactId) => {
-    setContacts((prevContacts) => {
-      return prevContacts.filter((contact) => contact.id !== contactId);
-    });
-  };
-
-  const filteredContacts = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
+  // const filteredContacts = contacts.filter((contact) =>
+  //   contact.name.toLowerCase().includes(filter.toLowerCase())
+  // );
   return (
     <div>
       <h1>Phonebook</h1>
       <ContactForm onAdd={addContact} />
-      <SearchBox value={filter} onFilter={setFilter} />
-      <ContactList data={filteredContacts} onDelete={delContact} />
+      <SearchBox />
+      <ContactList />
     </div>
   );
 };

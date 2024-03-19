@@ -1,13 +1,35 @@
 import Contact from "../Contact/Contact";
+import { useSelector } from "react-redux";
 import css from "./ContactList.module.css";
-export default function ContactList({ data, onDelete }) {
+
+export default function ContactList() {
+  const filterContact = useSelector((state) => state.filter);
+  const contactListRedux = useSelector((state) => state.contacts);
+  const filteredContacts = contactListRedux.filter(
+    (contact) =>
+      contact.name &&
+      contact.name
+        .toLowerCase()
+        .includes(filterContact.name.toLowerCase(), console.log(contact))
+  );
+
   return (
     <ul className={css.list}>
-      {data.map((contact) => (
+      {filteredContacts.map((contact) => (
         <li key={contact.id} className={css.contact}>
-          <Contact contact={contact} onDelete={onDelete} />
+          <Contact contact={contact} />
         </li>
       ))}
     </ul>
   );
 }
+// onDelete={onDelete}
+// const handleDelete = () => dispatch(deleteTask(task.id));
+// const delContact = (contactId) => {
+//   setContacts((prevContacts) => {
+//     return prevContacts.filter((contact) => contact.id !== contactId);
+//   });
+
+// const filteredContacts = contacts.filter((contact) =>
+//   contact.name.toLowerCase().includes(filter.toLowerCase())
+// );
