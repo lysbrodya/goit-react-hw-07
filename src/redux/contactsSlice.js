@@ -1,9 +1,9 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
-import selectContacts from "../../ContactList.json";
+import initialContacts from "../../ContactList.json";
 
 const contactsSlice = createSlice({
   name: "contacts",
-  initialState: { items: selectContacts },
+  initialState: { items: initialContacts },
   reducers: {
     addContact: {
       reducer(state, action) {
@@ -29,3 +29,4 @@ const contactsSlice = createSlice({
 
 export const { addContact, deleteContact } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;
+export const selectContacts = (state) => state.contacts.items;

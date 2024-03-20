@@ -21,7 +21,6 @@ const persistedContactsReducer = persistReducer(
   contactsPersistConfig,
   contactsReducer
 );
-console.log(contactsPersistConfig);
 
 export const store = configureStore({
   reducer: {
