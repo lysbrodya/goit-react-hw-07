@@ -6,7 +6,8 @@
   border-radius: 10px;
 }
 .searchBox:hover {
-  box-shadow: 0 5px 15px 0 rgba(11, 99, 246, 1);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.4), 0 28px 30px rgba(0, 0, 0, 0.3);
 }
-.button {
+.searchBox:focus {
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.4), 0 28px 30px rgba(0, 0, 0, 0.3);
 }
