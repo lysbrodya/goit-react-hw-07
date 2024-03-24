@@ -2,10 +2,11 @@
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+  padding: 0;
 }
 .contact {
   display: flex;
-  min-width: 200px;
+  width: 31%;
   border: 2px solid black;
   border-radius: 3px;
   padding: 10px;

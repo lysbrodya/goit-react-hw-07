@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsOps";
 import { Formik, Form, Field } from "formik";
 import { useId } from "react";
 import * as Yup from "yup";
@@ -8,7 +8,6 @@ import css from "./ContactForm.module.css";
 
 export default function ContactForm() {
   const dispatch = useDispatch();
-
   const phoneId = useId();
   const nameId = useId();
   const initialValues = {
@@ -29,7 +28,7 @@ export default function ContactForm() {
     <Formik
       initialValues={initialValues}
       onSubmit={(values, actions) => {
-        dispatch(addContact(values.name, values.number));
+        dispatch(addContact(values));
         actions.resetForm();
       }}
       validationSchema={FeedbackSchema}
