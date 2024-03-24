@@ -1,4 +1,12 @@
 .searchBox {
-  width: 316px;
+  width: 32%;
+  height: 20px;
   margin-bottom: 15px;
+  background-color: transparent;
+  border-radius: 10px;
+}
+.searchBox:hover {
+  box-shadow: 0 5px 15px 0 rgba(11, 99, 246, 1);
+}
+.button {
 }

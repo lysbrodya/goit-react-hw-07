@@ -1,10 +1,26 @@
 .buttonDel {
   margin-left: auto;
   height: fit-content;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border-color: transparent;
+  background-color: transparent;
+  box-shadow: 0 5px 15px 0 rgba(11, 99, 246, 1);
+  transition: 0.5s;
+}
+.buttonDel:hover {
+  transform: translate(0, -3px);
+  box-shadow: 0 20px 40px 0 rgba(11, 99, 246, 1);
 }
 .Icon {
   margin-right: 5px;
 }
 .userContact {
   margin-right: 10px;
+}
+
+.nameNum {
+  box-shadow: 0 5px 15px 0 rgba(11, 99, 246, 1);
+  border-radius: 10px;
+  padding: 5px;
 }

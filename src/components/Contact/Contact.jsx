@@ -10,11 +10,11 @@ export default function Contact({ contact }) {
     <>
       <div className={css.userContact}>
         {" "}
-        <p>
+        <p className={css.nameNum}>
           <FaUser className={css.Icon} />
           {contact.name}
         </p>
-        <p>
+        <p className={css.nameNum}>
           <FaPhone className={css.Icon} />
           {contact.number}
         </p>
